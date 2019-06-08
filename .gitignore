@@ -1,2 +1,6 @@
-.env
-.vscode
+.env/
+.vscode/
+XDG_CACHE_HOME/
+notaria/notaria/__pycache__/
+notaria/apps/nucleo/__pycache__/
+notaria/apps/nucleo/migrations/

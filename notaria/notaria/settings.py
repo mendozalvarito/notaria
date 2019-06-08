@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Aplicaciones
+    'apps.nucleo',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'notaria.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'plantillas')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,14 +71,25 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'notaria.wsgi.application'
 
+AUTHENTICATION_BACKENDS = (
+    'nucleo.backends.EmailAuthBackend',
+)
+
+# Model User Authenticate
+AUTH_USER_MODEL = 'nucleo.User'
+
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'notaria',
+        'USER': 'notaria',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -103,9 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-BO'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/La_Paz'
 
 USE_I18N = True
 
@@ -117,4 +130,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/estaticos/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'estaticos'),
+    # os.path.join(BASE_DIR, 'node_modules'),
+)
+
+# Media Files (Documents, Pictures, Videos, Musics and Files)
+
+MEDIA_URL = '/multimedia/'
+
+MEDIAFILES_DIRS = (
+    os.path.join(BASE_DIR, 'multimedia'),
+)
