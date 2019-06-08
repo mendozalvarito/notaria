@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Aplicaciones
     'apps.nucleo',
+    'apps.cliente',
 ]
 
 MIDDLEWARE = [
@@ -72,7 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'notaria.wsgi.application'
 
 AUTHENTICATION_BACKENDS = (
-    'nucleo.backends.EmailAuthBackend',
+    'apps.nucleo.backends.EmailAuthBackend',
 )
 
 # Model User Authenticate

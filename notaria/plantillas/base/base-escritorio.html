@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{% block title %}{% endblock %}</title>
+  {% block css %}{% endblock %}
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+      {% block barra-lateral %}{% endblock %}
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          {% block barra-superior %}{% endblock %}
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            {% block content %}{% endblock %}
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+        {% block pie %}{% endblock %}
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+  <!-- Scroll to Top Button-->
+  {% block navegador-arriba %}{% endblock %}
+  <!-- Logout Modal-->
+  {% block modal %}{% endblock %}
+
+  {% block js %}{% endblock %}
+
+</body>
+
+</html>
