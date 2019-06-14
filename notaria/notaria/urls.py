@@ -21,6 +21,7 @@ from apps.nucleo.vistas.nucleo import InicioView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("nucleo/", include("apps.nucleo.urls")),
+    path("cliente/", include("apps.cliente.urls")),
     path('',InicioView.as_view(), name='inicio'),
     path('cerrar/',views.cerrar, name='cerrar'),
 ]

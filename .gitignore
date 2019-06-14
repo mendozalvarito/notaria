@@ -4,3 +4,10 @@ XDG_CACHE_HOME/
 notaria/notaria/__pycache__/
 notaria/apps/nucleo/__pycache__/
 notaria/apps/nucleo/migrations/
+notaria/apps/cliente/__pycache__/
+notaria/apps/cliente/migrations/
+notaria/apps/cliente/vistas/__pycache__/
+notaria/apps/nucleo/templatetags/__pycache__/
+notaria/apps/nucleo/templatetags/__init__.py
+notaria/apps/cliente/vistas/__init__.py
+.gitignore

@@ -1,0 +1,39 @@
+{% extends "base/base-escritorio.html" %}
+{% block title %}
+Notaria
+{% endblock %}
+{% block css %}
+{% include "base/css.html" %}
+{% endblock %}
+{% block barra-lateral %}
+{% include "base/barra-lateral.html" %}
+{% endblock %}
+{% block barra-superior %}
+{% include "base/barra-superior.html" %}
+{% endblock %}
+{% block content %}
+{% if object %}
+<form action="{% url 'cliente:modificar-pais' object.id %}" method="POST">
+{% else %}
+<form action="{% url 'cliente:crear-pais' %}" method="POST">
+{% endif %}
+    {% csrf_token %} 
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-user btn-block">
+        Modificar
+    </button>
+    {{urls}}
+</form>
+{% endblock %}
+{% block pie %}
+{% include "base/pie.html" %}
+{% endblock %}
+{% block navegador-arriba %}
+{% include "base/navegador-arriba.html" %}
+{% endblock %}
+{% block modal %}
+{% include "base/modal.html" %}
+{% endblock %}
+{% block js %}
+{% include "base/js.html" %}
+{% endblock %}
